@@ -323,10 +323,10 @@ p.caption {
 }
 
 /*Comparison css*/
-a {
+main a {
 	text-decoration: none;
 }
-a:hover {
+main a:hover {
 	text-shadow: 0 4px 7px #0999E0;
 	opacity: .5;
 	background-color: transparent;

@@ -52,15 +52,33 @@
 	<!-- main content -->
 	<main>
 		<h2>Определение:</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at aliquam sapien. Donec lacinia commodo laoreet. Cras hendrerit ligula quis convallis tempor. Aliquam lacus leo, accumsan vel nulla sed, convallis ultrices justo. Aliquam ut est vitae quam hendrerit tincidunt. Integer vel elementum nisl. Nam scelerisque euismod diam, in volutpat justo porttitor et. Donec posuere turpis ut leo feugiat, non imperdiet tortor dignissim. Praesent et nunc sed tortor convallis sollicitudin. Duis cursus elementum lacus, nec posuere ligula sollicitudin vitae. Etiam tristique ultrices maximus. Nulla ac mauris nec enim eleifend lacinia sit amet ut arcu. Nullam aliquam augue vel iaculis vehicula.</p>
+
+		<p>Протоколът на граничния шлюз (BGP) е един от семейството протоколи за IP маршрутизиране (пада се протокол за външен шлюз или EGP), предназначен да разпространява информация за маршрутизиране между автономни сиситеми. (Съкратено AS, те са мрежи, управлявани от едно предприятие или доставчик на услуги)
+		<br><br>
+		EGP са всички протоколи за векторно маршрутизиране. В такъв протокол, рутерите обменят информация за достъпност на мрежата с най-близките си съседи. Рутерите комуникират помежду си, изпращайки набор от адреси („адресни префикси“), до които те самите могат да достигнат. След това се изпраща самия адрес, до който искат да достигнат.
+		<br><br>
+		BGP създава стабилност на мрежата, като гарантира, че рутерите могат да се адаптират към неуспехи в маршрута: когато един път е затворен, бързо се намира нов път. BGP взема решения за маршрутизиране въз основа на пътища, дефинирани от правила или мрежови политики, зададени от мрежовите администратори.
+		<br><br>
+		От 1994 г. насам се използва версия 4 на протокола, която поддържа CIDR и обединяване (агрегация) на маршрути, скоето се намалява размера на маршрутните таблици.
+		</p>
+
 		<div class="iframe-container">
 			<iframe width="420" height="315"
-				src="https://www.youtube.com/embed/tgbNymZ7vqY">
+				src="https://www.youtube.com/embed/A1KXPpqlNZ4">
 			</iframe>
 		</div>
+
 		<p class="caption">Видео показващо как работи BGP.</p>
+
 		<h2>Какво е AS?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at aliquam sapien. Donec lacinia commodo laoreet. Cras hendrerit ligula quis convallis tempor. Aliquam lacus leo, accumsan vel nulla sed, convallis ultrices justo. Aliquam ut est vitae quam hendrerit tincidunt. Integer vel elementum nisl. Nam scelerisque euismod diam, in volutpat justo porttitor et. Donec posuere turpis ut leo feugiat, non imperdiet tortor dignissim. Praesent et nunc sed tortor convallis sollicitudin. Duis cursus elementum lacus, nec posuere ligula sollicitudin vitae. Etiam tristique ultrices maximus. Nulla ac mauris nec enim eleifend lacinia sit amet ut arcu. Nullam aliquam augue vel iaculis vehicula.</p>
+		<p>Интернета е мрежа от мрежи. Той е разбит на стотици хиляди по-малки мрежи, известни още като автономни системи (AS). Всяка от тези мрежи по същество представлява голям набор от рутери, управлявани от една организация.</p>
+
+		<div style="text-align: center;">
+			<img src="images/the-internet.jpg">
+		</div>
+
+		<p class="caption">Мрежа от мрежи.</p>
+
 		<h2>Принцип на работа на BGP</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at aliquam sapien. Donec lacinia commodo laoreet. Cras hendrerit ligula quis convallis tempor. Aliquam lacus leo, accumsan vel nulla sed, convallis ultrices justo. Aliquam ut est vitae quam hendrerit tincidunt. Integer vel elementum nisl. Nam scelerisque euismod diam, in volutpat justo porttitor et. Donec posuere turpis ut leo feugiat, non imperdiet tortor dignissim. Praesent et nunc sed tortor convallis sollicitudin. Duis cursus elementum lacus, nec posuere ligula sollicitudin vitae. Etiam tristique ultrices maximus. Nulla ac mauris nec enim eleifend lacinia sit amet ut arcu. Nullam aliquam augue vel iaculis vehicula.</p>
 		<h2>iBGP и eBGP. Каква е разликата?</h2>

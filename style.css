@@ -240,7 +240,7 @@ footer {
   	background: radial-gradient(#0999E0, #182848, black); 
 	text-align: center;
 	color: white;
-	padding: 80px;
+	padding: 50px 30px;
 	border-radius: 5px 5px 0 0;
 	text-shadow: 0 4px 7px #0999E0;
 }
@@ -263,4 +263,27 @@ p.caption {
 	font-style: italic;
 	margin-top: 20px;
 	text-align: center;
+}
+
+/*BGP Attributes css*/
+.attributes-table {
+	margin: 0 auto;
+	border-collapse:collapse;
+    border-spacing:0;
+    width:100%;
+    border: 1px solid black;
+}
+
+.attributes-table tr, .attributes-table th, .attributes-table td {
+	padding: 20px;
+	border: 1px solid black;
+}
+
+.attribute-name {
+	width: 30%;
+}
+
+.attribute-description {
+	width: 100%;
+	font-size: 20px;
 }

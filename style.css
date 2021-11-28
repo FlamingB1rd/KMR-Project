@@ -195,7 +195,7 @@ main {
 
 main img {
 	max-width: 100%;
-	margin: 0 auto;
+
 }
 
 /* Style the iframe to fit in the container div with full height and width */
@@ -219,8 +219,8 @@ main iframe {
 
 h2 {
 	font-size: 35px;
-	color: #2eff82;
-	text-shadow: 3px 1px 4px #000000ba;
+	color: #2a9ae9;
+    text-shadow: 3px 1px 4px #000000;
 }
 
 @media(max-width: 700px) {

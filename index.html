@@ -59,6 +59,8 @@
 		<br><br>
 		BGP създава стабилност на мрежата, като гарантира, че рутерите могат да се адаптират към неуспехи в маршрута: когато един път е затворен, бързо се намира нов път. BGP взема решения за маршрутизиране въз основа на пътища, дефинирани от правила или мрежови политики, зададени от мрежовите администратори.
 		<br><br>
+		Структурата на Интернет непрекъснато се променя, като се появяват нови системи, а съществуващите системи стават недостъпни. Поради това всяка AS трябва да бъде актуализирана с информация относно нови маршрути, както и остарели маршрути. Това се прави чрез пиринг сесии, при които всяка AS се свързва със съседни AS с TCP/IP връзка с цел споделяне на информация за маршрутизиране. По този начин BGP има достатъчно информация да използва сложни алгоритми за намиране на най-бързия и ефективен маршрут до определено място спрямо зададените параметри и правила. (Намалява bandwidth) 
+		<br><br>
 		От 1994 г. насам се използва версия 4 на протокола, която поддържа CIDR и обединяване (агрегация) на маршрути, скоето се намалява размера на маршрутните таблици.
 		</p>
 
@@ -70,6 +72,8 @@
 
 		<p class="caption">Видео показващо как работи BGP.</p>
 
+		<hr>
+
 		<h2>Какво е AS?</h2>
 		<p>Интернета е мрежа от мрежи. Той е разбит на стотици хиляди по-малки мрежи, известни още като автономни системи (AS). Всяка от тези мрежи по същество представлява голям набор от рутери, управлявани от една организация.</p>
 
@@ -79,15 +83,35 @@
 
 		<p class="caption">Мрежа от мрежи.</p>
 
+		<p>По-конкретно, AS е голяма мрежа или група от мрежи, които имат унифицирана политика за маршрутизиране. Всеки компютър или устройство, което се свързва с интернет, е свързано към AS.
+		<br><br>
+		Пакети с данни пресичат Интернет чрез прескачане от AS към AS, докато достигнат до AS, който съдържа адреса на техния интернет протокол (IP) на местоназначението. Маршрутизаторите в тази AS изпращат пакета до IP адреса Всяка AS контролира определен набор от IP адреси, както  примерно една пощенската служба на всеки град е отговорна за доставката на поща до всички адреси в този град. Обхватът от IP адреси, върху които даден AS има контрол, се нарича тяхното „IP адресно пространство“.
+		<br><br>
+		Повечето AS се свързват с няколко други AS. Ако AS се свързва само с една друга AS и споделя същата политика за маршрутизиране, вместо това може да се счита за подмрежа на първата AS.
+		<br><br>
+		Обикновено всяка AS се управлява от една голяма организация, като доставчик на интернет услуги (ISP), голяма корпоративна технологична компания, университет или правителствена агенция.
+		</p>
+
+		<hr>
+
 		<h2>Принцип на работа на BGP</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at aliquam sapien. Donec lacinia commodo laoreet. Cras hendrerit ligula quis convallis tempor. Aliquam lacus leo, accumsan vel nulla sed, convallis ultrices justo. Aliquam ut est vitae quam hendrerit tincidunt. Integer vel elementum nisl. Nam scelerisque euismod diam, in volutpat justo porttitor et. Donec posuere turpis ut leo feugiat, non imperdiet tortor dignissim. Praesent et nunc sed tortor convallis sollicitudin. Duis cursus elementum lacus, nec posuere ligula sollicitudin vitae. Etiam tristique ultrices maximus. Nulla ac mauris nec enim eleifend lacinia sit amet ut arcu. Nullam aliquam augue vel iaculis vehicula.</p>
+		<p>BGP комуникира, като установява TCP връзка по порт 179 - за разлика от повечето други маршрутни протоколи, ползващи UDP. По тази връзка (съединение) се установяват съседства между рутърите, като съобщенията по нея са с лимит 4096 B. За да станат съседи, BGP рутърите, принадлежащи на различни AS, трябва да са непосредствено свързани (без междинни рутъри).
+		<br><br>
+		Тъй като BGP работи върху протокола за управление на предаването (TCP), той е съвместим с останалата част от интернет, която използва TCP за комуникация. TCP гарантира, че пакетите с данни се изпращат и доставят през мрежи. BGP също така взаимодейства добре със защитен слой на сокети (SSL), виртуална частна мрежа (VPN) и сигурност на транспортния слой (TLS).
+		<br><br>
+		Всеки BGP възел периодично изпраща 19-байтови “keep-alive” съобщения за поддържане на връзката.
+		Предложение за съседство се праща с "OPEN" съобщение. Отговорът е KEEPALIVE (положителен) или NOTIFICATION (отрицателен). След KEEPALIVE и установявавен на съседство, започват размените на ъпдейти. Подават се пакети с информация за новите създадени маршруите благодарение на това съседство.
+		</p>
+
+		<hr>
+
 		<h2>iBGP и eBGP. Каква е разликата?</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at aliquam sapien. Donec lacinia commodo laoreet. Cras hendrerit ligula quis convallis tempor. Aliquam lacus leo, accumsan vel nulla sed, convallis ultrices justo. Aliquam ut est vitae quam hendrerit tincidunt. Integer vel elementum nisl. Nam scelerisque euismod diam, in volutpat justo porttitor et. Donec posuere turpis ut leo feugiat, non imperdiet tortor dignissim. Praesent et nunc sed tortor convallis sollicitudin. Duis cursus elementum lacus, nec posuere ligula sollicitudin vitae. Etiam tristique ultrices maximus. Nulla ac mauris nec enim eleifend lacinia sit amet ut arcu. Nullam aliquam augue vel iaculis vehicula.</p>
 	</main>
 
 	<!-- footer -->
 	<footer>
-		<p>Този сайт бе създаден с цел изработване Курсов Проект по Компютърни Мрежи от Ивелин Димитров Николов 121218091 група 52. За повече информация, натиснете <a href="">тук</a></p>
+		<p>Този сайт бе създаден с цел изработване Курсов Проект по Компютърни Мрежи от Ивелин Димитров Николов 121218091 група 52. За повече информация, натиснете <a href="contact-us.html">тук</a></p>
 	</footer>
 </body>
 <script type="text/javascript">

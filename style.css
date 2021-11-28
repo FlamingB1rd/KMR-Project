@@ -198,6 +198,13 @@ main img {
 
 }
 
+@media(min-width: 1600px) {
+	main img {
+		max-width: 100%;
+		width: 1300px;
+	}
+}
+
 /* Style the iframe to fit in the container div with full height and width */
 main iframe {
 	max-width: auto;
@@ -280,6 +287,12 @@ p.caption {
     table-layout: fixed;
 }
 
+.attributes-table th {
+	background-color: #0d3148;
+	color: white;
+	text-shadow: 0 4px 7px #0999e0;;
+}
+
 .attributes-table tr, .attributes-table th, .attributes-table td {
 	padding: 10px;
 	border: 1px solid black;
@@ -307,4 +320,14 @@ p.caption {
 		width: 40%;
 		font-size: 35px;
 	}
+}
+
+/*Comparison css*/
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-shadow: 0 4px 7px #0999E0;
+	opacity: .5;
+	background-color: transparent;
 }

@@ -235,6 +235,10 @@ h2 {
 	}
 }
 
+ol > li::marker {
+  font-weight: bold;
+}
+
 /*Common css - footer style*/
 footer {
 	background: #4b6cb7; /* fallback for old browsers */
@@ -272,19 +276,33 @@ p.caption {
 	border-collapse:collapse;
     border-spacing:0;
     width:100%;
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
 .attributes-table tr, .attributes-table th, .attributes-table td {
-	padding: 20px;
+	padding: 10px;
 	border: 1px solid black;
 }
 
 .attribute-name {
-	width: 30%;
+	width: 20%;
 }
 
 .attribute-description {
-	width: 100%;
-	font-size: 20px;
+	width: 40%;
+	font-size: 25px;
+}
+
+@media(max-width: 700px) {
+	.attribute-description {
+		width: 40%;
+		font-size: 15px;
+	}
+}
+
+@media(min-width: 1600px) {
+	.attribute-description {
+		width: 40%;
+		font-size: 35px;
+	}
 }

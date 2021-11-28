@@ -23,7 +23,7 @@
 		</div>
 		<ul class="nav-list" id="nav-list">
 			<li class="nav-list-item">
-				<a href="attributes.html">BGP Артибути</a>
+				<a href="comparison.html">iBGP vs eBGP</a>
 			</li>
 			<li class="nav-list-item">
 				<a href="disadvantages.html">Уязвимости и инциденти</a>
@@ -105,8 +105,23 @@
 
 		<hr>
 
-		<h2>iBGP и eBGP. Каква е разликата?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at aliquam sapien. Donec lacinia commodo laoreet. Cras hendrerit ligula quis convallis tempor. Aliquam lacus leo, accumsan vel nulla sed, convallis ultrices justo. Aliquam ut est vitae quam hendrerit tincidunt. Integer vel elementum nisl. Nam scelerisque euismod diam, in volutpat justo porttitor et. Donec posuere turpis ut leo feugiat, non imperdiet tortor dignissim. Praesent et nunc sed tortor convallis sollicitudin. Duis cursus elementum lacus, nec posuere ligula sollicitudin vitae. Etiam tristique ultrices maximus. Nulla ac mauris nec enim eleifend lacinia sit amet ut arcu. Nullam aliquam augue vel iaculis vehicula.</p>
+		<h2>Атрибути на маршрута</h2>
+		<ol>
+		  <b><li>
+		  	</b>ORIGIN - Указва откъде е научен маршрутът. Три възможни стойности:
+		  	<ul>
+		  		<li>0 - маршрутът е научен от вътрешен протокол (IGP).</li>
+		  		<li>1 - от вътрешен (EGP).</li>
+		  		<li>2 - по друг начин, или неизвестно откъде.</li>
+		  	</ul>
+		  </li>
+		  <li>AS_PATH - списък от AS, през които е минал ъпдейтът (описание на маршрута). Маршрутът се натрупва по пътя.</li>
+		  <li>AS_SEQUENCE - Начин на представяне на сегмент от маршрута в AS_PATH. Представлява подреден списък от номера на AS.</li>
+		  <li>AS_SET - Друг начин за представяне на сегмент - неподреден (множествен) списък.</li>
+		  <li>NEXT_HOP - Буквално next hop адрес - към кого ще бъде предаден пакет, движещ се по този маршрут. Характерно е, че NEXT_HOP може да не е адресът на рутъра, през когото минава маршрутът към целевата AS - но този рутър трябва да е достижим от рутъра. Тоест, NEXT_HOP може да указва пакетът да се препрати не на рутъра, през който минава най-евтиният път до целта, а към друг рутър, през който обаче трябва да може да се достигне най-евтиният рутър. Върши работа за регулиране на трафика, осъществяване на горещ картоф и прочие.</li>
+		  <li>MULTI_EXIT_DISC - Multi-exit discriminator. Представлява стойността (спрямо рутъра, разпращащ ъпдейта) на метриката на избрания маршрут, с интегрирани в нея точки по системата за точкуване. Рутърът, който приема ъпдейта, може въобще да не я гледа, в зависимост от приложените му манипулации.</li>
+		  <li>LOCAL_PREF - Горе-долу, представлява разликата в точките на избрания и неизбраните маршрути. Позволява политиката на рутъра да се влияе от тази на други рутъри.</li>
+		</ol>
 	</main>
 
 	<!-- footer -->

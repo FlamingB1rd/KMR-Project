@@ -65,12 +65,13 @@
             <tr>
                 <td class="attribute-name">Съседство</td>
                 <td class="attribute-description">И двата рутера, формиращи съседство на eBGP, трябва да бъдат в отделни AS (автономни системи).</td>
-                <td class="attribute-description">И двата рутера, формиращи съседство iBGP, трябва да са в една и съща AS (автономни системи).</td>
+                <td class="attribute-description">И двата рутера, формиращи съседство на iBGP, трябва да са в една и съща AS (автономни системи).</td>
             </tr>
             <tr>
                 <td class="attribute-name">Реклама за маршрут</td>
-                <td class="attribute-description">Маршрут, научен от eBGP партньор, ще бъде обявен обратно към друг IBGP или eBGP съсед по подразбиране.</td>
-                <td class="attribute-description">Маршрут, научен от IBGP партньор, няма да бъде обявен обратно към друг съсед на iBGP по подразбиране.</td>
+                <td class="attribute-description">Маршрут, научен от eBGP партньор, ще бъде обявен (рекламиран) обратно към друг IBGP или eBGP съсед по подразбиране.</td>
+                <td class="attribute-description">Маршрут, научен от IBGP партньор, няма да бъде обявен
+                (рекламиран) обратно към друг съсед на iBGP по подразбиране.</td>
             </tr>
             <tr>
                 <td class="attribute-name">Като допълнение към пътя</td>
@@ -79,21 +80,21 @@
             </tr>
             <tr>
                 <td class="attribute-name">Атрибути</td>
-                <td class="attribute-description">Атрибути като локални предпочитания не се изпращат до eBGP партньорите, а се изпращат до iBGP партньора.</td>
-                <td class="attribute-description">Атрибути като локални предпочитания се изпращат на IBGP партньори, но не и на EBGP партньор.</td>
+                <td class="attribute-description">Атрибути като 'локални предпочитания' не се изпращат до eBGP партньорите, а се изпращат до iBGP партньора.</td>
+                <td class="attribute-description">Атрибути като 'локални предпочитания' се изпращат на IBGP партньори, но не и на EBGP партньор.</td>
             </tr>
             <tr>
                 <td class="attribute-name">Обхват</td>
-                <td class="attribute-description">Използва се между организация или между организация и доставчик на интернет услуги.</td>
+                <td class="attribute-description">Използва се между организации или между организация и доставчик на интернет услуги.</td>
                 <td class="attribute-description">Използва се в рамките на една и съща организация.</td>
             </tr>
             <tr>
                 <td class="attribute-name">TTL</td>
-                <td class="attribute-description">По подразбиране eBGP партньорите са зададени с TTL = 1, което означава, че съседите се предполага, че са директно свързани.</td>
+                <td class="attribute-description">По подразбиране eBGP партньорите са зададени с TTL = 1, което означава, че съседите се предполагат, че са директно свързани.</td>
                 <td class="attribute-description">По подразбиране, iBGP партньорите са зададени с TTL = 255.</td>
             </tr>
             <tr>
-                <td class="attribute-name">AD (административно разстояние)</td>
+                <td class="attribute-name">АР (административно разстояние)</td>
                 <td class="attribute-description">EBGP маршрутите имат административно разстояние от 20.</td>
                 <td class="attribute-description">IBGP маршрутите имат административно разстояние от 200.</td>
             </tr>
@@ -105,12 +106,12 @@
             <tr>
                 <td class="attribute-name">Топология</td>
                 <td class="attribute-description">Не изисква пълно съседство на мрежата.</td>
-                <td class="attribute-description">Изисква пълна мрежа или отражатели на маршрута или Конфедерация.</td>
+                <td class="attribute-description">Изисква пълна мрежа.</td>
             </tr>
             <tr>
-                <td class="attribute-name">Механизъм за предотвратяване на примка</td>
-                <td class="attribute-description">Използва като път за предотвратяване на цикъл.</td>
-                <td class="attribute-description">Използва BGP Split horizon, т.е. не реклама от iBGP към iBGP съсед.</td>
+                <td class="attribute-name">Механизъм за предотвратяване на цикъл</td>
+                <td class="attribute-description">Използва AS_PATH за предотвратяване на цикъл.</td>
+                <td class="attribute-description">Използва BGP Split horizon, т.е. не рекламира от iBGP към iBGP съсед.</td>
             </tr>
         </table>
 	</main>
